@@ -1,0 +1,27 @@
+name: CI  # This is the name of the workflow that will be displayed in GitHub Actions UI and CI is a variable name
+
+on: push
+
+job:
+  linting:  #linting is a variable name
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v3 # This step checks out the code from the repository to the runner
+
+      - name: setup python
+        uses: actions/setup-python@v4  # This step sets up the Python environment on the runner
+        with:
+          python-version: '3.10'  # Specify the Python version to use
+
+      - name: install flake8
+        run: |
+          python -m pip install --upgrade pip  # Upgrade pip to the latest version
+          pip install flake8  # Install flake8 for linting Python code
+
+      - name: run flake8
+        run: |
+          flake8 app.py  # Run flake8 on the current directory to check for linting issues
+          echo "Linting completed successfully!"  # Print a success message if linting passes
+        # continue-on-error: true  # Continue the workflow even if flake8 finds issues
