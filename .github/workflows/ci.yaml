@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]  # This specifies the operating system on which the job will run
-        python-version: [3.9, 3.10]  # This specifies the Python version to use in the job
+        python-version: ['3.9', '3.10']  # This specifies the Python version to use in the job
 
     steps:
       - name: code checkout
