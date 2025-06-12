@@ -37,6 +37,8 @@ jobs:
         # continue-on-error: true  # Continue the workflow even if flake8 finds issues
 
   testing:
+    needs: linting  # This job depends on the completion of the linting job
+    name: run unit tests  # This is the name of the job that will be displayed in GitHub Actions UI
     runs-on: ubuntu-latest  # This job will run on the latest version of Ubuntu
 
     steps:
