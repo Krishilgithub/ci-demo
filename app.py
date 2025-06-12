@@ -4,6 +4,7 @@ def add(a, b):
 def subtract(a, b):
     return a - b
 
+
 result1 = add(5, 3)
 result2 = subtract(10, 4)
 
