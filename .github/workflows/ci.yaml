@@ -2,7 +2,7 @@ name: CI  # This is the name of the workflow that will be displayed in GitHub Ac
 
 on: push
 
-job:
+jobs:
   linting:  #linting is a variable name
     runs-on: ubuntu-latest
 
