@@ -1,6 +1,12 @@
 name: CI  # This is the name of the workflow that will be displayed in GitHub Actions UI and CI is a variable name
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main  # This workflow will run on push and pull request events to the main branch
 
 jobs:
   linting:  #linting is a variable name
