@@ -8,14 +8,14 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]  # This specifies the operating system on which the job will run
-        python-version: [3.10]  # This specifies the Python version to use in the job
+        python-version: [3.9, 3.10]  # This specifies the Python version to use in the job
 
     steps:
       - name: code checkout
         uses: actions/checkout@v3 # This step checks out the code from the repository to the runner
 
       - name: setup python
-        uses: actions/setup-python@v4  # This step sets up the Python environment on the runner
+        uses: actions/setup-python@v2  # This step sets up the Python environment on the runner
         with:
           python-version: ${{matrix.python-version}}  # Specify the Python version to use
 
