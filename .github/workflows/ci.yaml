@@ -35,3 +35,19 @@ jobs:
           flake8 app.py  # Run flake8 on the current directory to check for linting issues
           echo "Linting completed successfully!"  # Print a success message if linting passes
         # continue-on-error: true  # Continue the workflow even if flake8 finds issues
+
+  testing:
+    runs-on: ubuntu-latest  # This job will run on the latest version of Ubuntu
+
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v3  # This step checks out the code from the repository to the runner
+
+      - name: setup python
+        uses: actions/setup-python@v2  # This step sets up the Python environment on the runner
+        with:
+          python-version: '3.10'  # Specify the Python version to use
+
+      - name: run unit test
+        run: |
+          python -m unittest discover
