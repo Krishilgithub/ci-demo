@@ -22,4 +22,3 @@ if __name__ == '__main__':
 
     print("Addition Result:", result1)
     print("Subtraction Result:", result2)
-    
